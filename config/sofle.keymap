@@ -4,6 +4,8 @@
 #include <dt-bindings/zmk/outputs.h>
 #include <dt-bindings/zmk/rgb.h>
 #include <dt-bindings/zmk/ext_power.h>
+#include <dt-bindings/zmk/bt.h>
+#include <dt-bindings/zmk/keys.h>
 
 / {
     combos {
@@ -16,21 +18,29 @@
         };
 
         delete {
-            bindings = <&kp DEL>;
-            key-positions = <24 25>;
+            bindings = <&kp DELETE>;
+            key-positions = <24 50>;
             layers = <0 1 2>;
         };
 
         larrow {
-            bindings = <&kp LEFT_ARROW>;
+            bindings = <&kp LEFT>;
             key-positions = <11 10>;
             layers = <0 2 1>;
         };
 
         rarrow {
-            bindings = <&kp RIGHT_ARROW>;
+            bindings = <&kp RIGHT>;
             key-positions = <23 22>;
             layers = <0 2 1>;
+        };
+
+        ESCQW {
+            bindings = <&kp ESCAPE>;
+            key-positions = <13 14>;
+            layers = <0 2 1>;
+            require-prior-idle-ms = <500>;
+            timeout-ms = <200>;
         };
     };
 
@@ -54,7 +64,7 @@
 
         base {
             bindings = <
-&escgr     &kp N1  &kp N2    &kp N3     &kp N4    &kp N5                             &kp N6     &kp N7    &kp N8     &kp N9    &kp N0    &kp UP
+&kp GRAVE  &kp N1  &kp N2    &kp N3     &kp N4    &kp N5                             &kp N6     &kp N7    &kp N8     &kp N9    &kp N0    &kp UP
 &kp TAB    &kp Q   &kp W     &kp E      &kp R     &kp T                              &kp Y      &kp U     &kp I      &kp O     &kp P     &kp DOWN
 &kp BSPC   &kp A   &kp S     &kp D      &kp F     &kp G                              &kp H      &kp J     &kp K      &kp L     &kp SEMI  &dash
 &kp LSHFT  &kp Z   &kp X     &kp C      &kp V     &kp B    &kp C_MUTE    &kp RETURN  &kp N      &kp M     &kp COMMA  &kp DOT   &kp FSLH  &kp RSHFT
@@ -83,11 +93,11 @@
 
         upper {
             bindings = <
-&escgr  &kp F1  &kp F2  &kp F3  &kp F4                        &kp F5                                       &kp F8        &kp F9  &kp F10  &kp F11  &kp F12    &trans
-&trans  &trans  &trans  &trans  &kp LEFT_BRACKET              &kp RIGHT_BRACKET                            &kp F7        &kp N7  &kp N8   &kp N9   &kp EQUAL  &trans
-&trans  &trans  &trans  &trans  &kp LS(RS(LEFT_PARENTHESIS))  &kp LS(RIGHT_PARENTHESIS)                    &kp LS(STAR)  &kp N4  &kp N5   &kp N6   &kp MINUS  &kp PLUS
-&trans  &trans  &trans  &trans  &kp LEFT_BRACE                &kp RIGHT_BRACE            &trans    &trans  &kp FSLH      &kp N1  &kp N2   &kp N3   &kp BSLH   &trans
-                &trans  &trans  &trans                        &kp SPACE                  &to 0     &to 2   &kp ENTER     &kp N0  &trans   &trans
+&kp GRAVE  &kp F1  &kp F2  &kp F3  &kp F4                        &kp F5                                       &kp F8        &kp F9  &kp F10  &kp F11  &kp F12    &trans
+&trans     &trans  &trans  &trans  &kp LEFT_BRACKET              &kp RIGHT_BRACKET                            &kp F7        &kp N7  &kp N8   &kp N9   &kp EQUAL  &trans
+&trans     &trans  &trans  &trans  &kp LS(RS(LEFT_PARENTHESIS))  &kp LS(RIGHT_PARENTHESIS)                    &kp LS(STAR)  &kp N4  &kp N5   &kp N6   &kp MINUS  &kp PLUS
+&trans     &trans  &trans  &trans  &kp LEFT_BRACE                &kp RIGHT_BRACE            &trans    &trans  &kp FSLH      &kp N1  &kp N2   &kp N3   &kp BSLH   &trans
+                   &trans  &trans  &trans                        &kp SPACE                  &to 0     &to 2   &kp ENTER     &kp N0  &trans   &trans
             >;
 
             sensor-bindings =
@@ -98,3 +108,4 @@
         };
     };
 };
+
