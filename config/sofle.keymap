@@ -7,9 +7,6 @@
 #include <dt-bindings/zmk/bt.h>
 #include <dt-bindings/zmk/keys.h>
 
-#include <dt-bindings/zmk/bt.h>
-#include <dt-bindings/zmk/keys.h>
-
 / {
     combos {
         compatible = "zmk,combos";
@@ -78,6 +75,15 @@
             #binding-cells = <0>;
             mods = <(MOD_LALT)>;
         };
+        tphldkpkp: tphldkpkp {
+            compatible = "zmk,behavior-hold-tap";
+            label = "TPHLDKPKP";
+            bindings = <&kp>, <&kp>;
+
+            #binding-cells = <2>;
+            tapping-term-ms = <200>;
+            flavor = "tap-preferred";
+        };
     };
 
     keymap {
@@ -85,11 +91,11 @@
 
         base {
             bindings = <
-&kp GRAVE   &kp N1  &kp N2    &kp N3     &kp N4    &kp N5                                         &kp N6     &kp N7    &kp N8     &kp N9    &kp N0    &kp UP
-&kp TAB     &kp Q   &kp W     &kp E      &kp R     &kp T                                          &kp Y      &kp U     &kp I      &kp O     &kp P     &kp DOWN
-&bkspc_del  &kp A   &kp S     &kp D      &kp F     &kp G                                          &kp H      &kp J     &kp K      &kp L     &kp SEMI  &dash
-&kp LSHFT   &kp Z   &kp X     &kp C      &kp V     &kp B    &kp K_PLAY_PAUSE    &kp RETURN        &kp N      &kp M     &kp COMMA  &kp DOT   &kp FSLH  &kp RSHFT
-                    &kp LALT  &kp LCTRL  &kp LGUI  &kp RET  &layerUpBase 0 0    &layerUpBase 2 2  &kp SPACE  &kp LGUI  &kp RCTRL  &kp RALT
+&kp GRAVE   &kp N1  &kp N2    &kp N3     &kp N4    &kp N5                                         &kp N6     &kp N7    &kp N8     &kp N9    &tphldkpkp KP_N0 UNDER  &tphldkpkp UP_ARROW END
+&kp TAB     &kp Q   &kp W     &kp E      &kp R     &kp T                                          &kp Y      &kp U     &kp I      &kp O     &kp P                   &tphldkpkp DOWN END
+&bkspc_del  &kp A   &kp S     &kp D      &kp F     &kp G                                          &kp H      &kp J     &kp K      &kp L     &kp SEMI                &dash
+&kp LSHFT   &kp Z   &kp X     &kp C      &kp V     &kp B    &kp K_PLAY_PAUSE    &kp RETURN        &kp N      &kp M     &kp COMMA  &kp DOT   &kp FSLH                &kp RSHFT
+                    &kp LALT  &kp LCTRL  &kp LGUI  &kp RET  &layerUpBase 1 1    &layerUpBase 2 2  &kp SPACE  &kp LGUI  &kp RCTRL  &kp RALT
             >;
 
             sensor-bindings = <&inc_dec_kp RIGHT LEFT>, <&inc_dec_kp UP DOWN>;
@@ -99,11 +105,11 @@
 
         lower {
             bindings = <
-&bt BT_CLR  &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4                                        &trans  &trans    &trans    &trans     &trans           &trans
-&trans      &trans        &trans        &trans        &trans        &trans                                              &trans  &trans    &kp UP    &trans     &kp PRINTSCREEN  &trans
-&trans      &trans        &trans        &trans        &trans        &trans                                              &trans  &kp LEFT  &kp DOWN  &kp RIGHT  &trans           &trans
-&trans      &kp LC(Z)     &kp LC(X)     &kp LC(C)     &kp LC(V)     &trans        &trans              &trans            &trans  &trans    &trans    &trans     &trans           &trans
-                          &trans        &trans        &trans        &trans        &layerUpBase 0 0    &layerUpBase 2 2  &trans  &trans    &trans    &trans
+&bt BT_CLR  &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4                                        &kp PG_UP      &trans    &trans    &trans     &trans           &trans
+&trans      &trans        &trans        &trans        &trans        &trans                                              &kp PAGE_DOWN  &trans    &kp UP    &trans     &kp PRINTSCREEN  &trans
+&trans      &trans        &trans        &trans        &trans        &trans                                              &kp HOME       &kp LEFT  &kp DOWN  &kp RIGHT  &trans           &trans
+&trans      &kp LC(Z)     &kp LC(X)     &kp LC(C)     &kp LC(V)     &trans        &trans              &trans            &kp END        &trans    &trans    &trans     &trans           &trans
+                          &trans        &trans        &trans        &trans        &layerUpBase 0 0    &layerUpBase 2 2  &trans         &trans    &trans    &trans
             >;
 
             label = "lower";
@@ -129,4 +135,5 @@
         };
     };
 };
+
 
