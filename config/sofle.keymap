@@ -17,19 +17,19 @@
 
         delete {
             bindings = <&kp DEL>;
-            key-positions = <36 24>;
+            key-positions = <24 25>;
             layers = <0 1 2>;
         };
 
         larrow {
             bindings = <&kp LEFT_ARROW>;
-            key-positions = <49 11>;
+            key-positions = <11 10>;
             layers = <0 2 1>;
         };
 
         rarrow {
             bindings = <&kp RIGHT_ARROW>;
-            key-positions = <49 23>;
+            key-positions = <23 22>;
             layers = <0 2 1>;
         };
     };
@@ -41,6 +41,12 @@
             #binding-cells = <0>;
             bindings = <&kp SQT>, <&kp MINUS>;
         };
+        escgr: escgr {
+            compatible = "zmk,behavior-tap-dance";
+            label = "ESCGR";
+            #binding-cells = <0>;
+            bindings = <&kp GRAVE>, <&kp ESCAPE>;
+        };
     };
 
     keymap {
@@ -48,7 +54,7 @@
 
         base {
             bindings = <
-&gresc     &kp N1  &kp N2    &kp N3     &kp N4    &kp N5                             &kp N6     &kp N7    &kp N8     &kp N9    &kp N0    &kp UP
+&escgr     &kp N1  &kp N2    &kp N3     &kp N4    &kp N5                             &kp N6     &kp N7    &kp N8     &kp N9    &kp N0    &kp UP
 &kp TAB    &kp Q   &kp W     &kp E      &kp R     &kp T                              &kp Y      &kp U     &kp I      &kp O     &kp P     &kp DOWN
 &kp BSPC   &kp A   &kp S     &kp D      &kp F     &kp G                              &kp H      &kp J     &kp K      &kp L     &kp SEMI  &dash
 &kp LSHFT  &kp Z   &kp X     &kp C      &kp V     &kp B    &kp C_MUTE    &kp RETURN  &kp N      &kp M     &kp COMMA  &kp DOT   &kp FSLH  &kp RSHFT
@@ -77,7 +83,7 @@
 
         upper {
             bindings = <
-&gresc  &kp F1  &kp F2  &kp F3  &kp F4                        &kp F5                                       &kp F8        &kp F9  &kp F10  &kp F11  &kp F12    &trans
+&escgr  &kp F1  &kp F2  &kp F3  &kp F4                        &kp F5                                       &kp F8        &kp F9  &kp F10  &kp F11  &kp F12    &trans
 &trans  &trans  &trans  &trans  &kp LEFT_BRACKET              &kp RIGHT_BRACKET                            &kp F7        &kp N7  &kp N8   &kp N9   &kp EQUAL  &trans
 &trans  &trans  &trans  &trans  &kp LS(RS(LEFT_PARENTHESIS))  &kp LS(RIGHT_PARENTHESIS)                    &kp LS(STAR)  &kp N4  &kp N5   &kp N6   &kp MINUS  &kp PLUS
 &trans  &trans  &trans  &trans  &kp LEFT_BRACE                &kp RIGHT_BRACE            &trans    &trans  &kp FSLH      &kp N1  &kp N2   &kp N3   &kp BSLH   &trans
