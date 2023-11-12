@@ -11,36 +11,10 @@
     combos {
         compatible = "zmk,combos";
 
-        cps {
-            bindings = <&kp CAPSLOCK>;
-            key-positions = <36 49>;
-            layers = <0 2 1>;
-        };
-
-        delete {
-            bindings = <&kp DELETE>;
-            key-positions = <24 50>;
-            layers = <0 1 2>;
-        };
-
-        larrow {
-            bindings = <&kp LEFT>;
-            key-positions = <11 10>;
-            layers = <0 2 1>;
-        };
-
-        rarrow {
-            bindings = <&kp RIGHT>;
-            key-positions = <23 22>;
-            layers = <0 2 1>;
-        };
-
         ESCQW {
             bindings = <&kp ESCAPE>;
             key-positions = <13 14>;
             layers = <0 2 1>;
-            require-prior-idle-ms = <500>;
-            timeout-ms = <200>;
         };
     };
 
@@ -84,6 +58,12 @@
             tapping-term-ms = <200>;
             flavor = "tap-preferred";
         };
+        divideslash: divideslash {
+            compatible = "zmk,behavior-tap-dance";
+            label = "DIVIDESLASH";
+            #binding-cells = <0>;
+            bindings = <&kp SLASH>, <&kp BACKSLASH>;
+        };
     };
 
     keymap {
@@ -91,10 +71,10 @@
 
         base {
             bindings = <
-&kp GRAVE   &kp N1  &kp N2    &kp N3     &kp N4    &kp N5                                         &kp N6     &kp N7    &kp N8     &kp N9    &tphldkpkp UNDERSCORE N0  &kp UP
-&kp TAB     &kp Q   &kp W     &kp E      &kp R     &kp T                                          &kp Y      &kp U     &kp I      &kp O     &kp P                     &kp DOWN
-&bkspc_del  &kp A   &kp S     &kp D      &kp F     &kp G                                          &kp H      &kp J     &kp K      &kp L     &kp SEMI                  &dash
-&kp LSHFT   &kp Z   &kp X     &kp C      &kp V     &kp B    &kp K_PLAY_PAUSE    &kp RETURN        &kp N      &kp M     &kp COMMA  &kp DOT   &kp FSLH                  &kp RSHFT
+&kp GRAVE   &kp N1  &kp N2    &kp N3     &kp N4    &kp N5                                         &kp N6     &kp N7    &kp N8     &kp N9    &tphldkpkp KP_N0 UNDER  &kp UP
+&kp TAB     &kp Q   &kp W     &kp E      &kp R     &kp T                                          &kp Y      &kp U     &kp I      &kp O     &kp P                   &kp DOWN
+&bkspc_del  &kp A   &kp S     &kp D      &kp F     &kp G                                          &kp H      &kp J     &kp K      &kp L     &kp SEMI                &dash
+&kp LSHFT   &kp Z   &kp X     &kp C      &kp V     &kp B    &kp K_PLAY_PAUSE    &kp RETURN        &kp N      &kp M     &kp COMMA  &kp DOT   &divideslash            &kp RSHFT
                     &kp LALT  &kp LCTRL  &kp LGUI  &kp RET  &layerUpBase 1 1    &layerUpBase 2 2  &kp SPACE  &kp LGUI  &kp RCTRL  &kp RALT
             >;
 
@@ -108,8 +88,8 @@
 &bt BT_CLR  &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4                                        &kp PG_UP      &trans    &trans    &trans     &trans           &trans
 &trans      &trans        &trans        &trans        &trans        &trans                                              &kp PAGE_DOWN  &trans    &kp UP    &trans     &kp PRINTSCREEN  &trans
 &trans      &trans        &trans        &trans        &trans        &trans                                              &kp HOME       &kp LEFT  &kp DOWN  &kp RIGHT  &trans           &trans
-&trans      &kp LC(Z)     &kp LC(X)     &kp LC(C)     &kp LC(V)     &trans        &trans              &trans            &kp END        &trans    &trans    &trans     &trans           &trans
-                          &trans        &trans        &trans        &trans        &layerUpBase 0 0    &layerUpBase 2 2  &trans         &trans    &trans    &trans
+&trans      &trans        &trans        &trans        &trans        &trans        &trans              &trans            &kp END        &trans    &trans    &trans     &trans           &trans
+                          &trans        &trans        &trans        &trans        &layerUpBase 1 1    &layerUpBase 0 0  &trans         &trans    &trans    &trans
             >;
 
             label = "lower";
@@ -120,11 +100,11 @@
 
         upper {
             bindings = <
-&kp GRAVE  &kp F1  &kp F2  &kp F3  &kp F4                        &kp F5                                                 &kp F8        &kp F9  &kp F10  &kp F11  &kp F12    &trans
-&trans     &trans  &trans  &trans  &kp LEFT_BRACKET              &kp RIGHT_BRACKET                                      &kp F7        &kp N7  &kp N8   &kp N9   &kp EQUAL  &trans
-&trans     &trans  &trans  &trans  &kp LS(RS(LEFT_PARENTHESIS))  &kp LS(RIGHT_PARENTHESIS)                              &kp LS(STAR)  &kp N4  &kp N5   &kp N6   &kp MINUS  &kp PLUS
-&trans     &trans  &trans  &trans  &kp LEFT_BRACE                &kp RIGHT_BRACE            &trans              &trans  &kp FSLH      &kp N1  &kp N2   &kp N3   &kp BSLH   &trans
-                   &trans  &trans  &trans                        &kp SPACE                  &layerUpBase 0 0    &to 2   &kp ENTER     &kp N0  &trans   &trans
+&kp GRAVE  &kp F1  &kp F2  &kp F3  &kp F4                        &kp F5                                                 &kp F8         &kp F9           &kp F10          &kp F11          &kp F12       &trans
+&trans     &trans  &trans  &trans  &kp LEFT_BRACKET              &kp RIGHT_BRACKET                                      &kp F7         &kp KP_NUMBER_7  &kp KP_NUMBER_8  &kp KP_NUMBER_9  &kp ASTERISK  &trans
+&trans     &trans  &trans  &trans  &kp LS(RS(LEFT_PARENTHESIS))  &kp LS(RIGHT_PARENTHESIS)                              &kp LS(COMMA)  &kp KP_N4        &kp KP_NUMBER_5  &kp KP_NUMBER_6  &kp MINUS     &kp PLUS
+&trans     &trans  &trans  &trans  &kp LEFT_BRACE                &kp RIGHT_BRACE            &trans              &trans  &kp PERIOD     &kp KP_NUMBER_1  &kp KP_NUMBER_2  &kp KP_NUMBER_3  &divideslash  &kp EQUAL
+                   &trans  &trans  &trans                        &kp SPACE                  &layerUpBase 0 0    &to 2   &kp ENTER      &kp KP_NUMBER_0  &trans           &trans
             >;
 
             sensor-bindings =
@@ -135,3 +115,4 @@
         };
     };
 };
+
