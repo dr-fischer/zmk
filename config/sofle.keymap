@@ -70,26 +70,74 @@
             #binding-cells = <0>;
             bindings = <&kp LEFT_SHIFT>, <&kp CAPSLOCK>;
         };
+        NUMF1: NUMF1 {
+            compatible = "zmk,behavior-tap-dance";
+            label = "NUMF1";
+            #binding-cells = <0>;
+            bindings = <&kp NUMBER_1>, <&kp F1>, <&to 0>;
+        };
+        NUMF2: NUMF2 {
+            compatible = "zmk,behavior-tap-dance";
+            label = "NUMF2";
+            #binding-cells = <0>;
+            bindings = <&kp NUMBER_2>, <&kp F2>;
+        };
+        NUMF5: NUMF5 {
+            compatible = "zmk,behavior-tap-dance";
+            label = "NUMF5";
+            #binding-cells = <0>;
+            bindings = <&kp NUMBER_3>, <&kp F5>;
+        };
+        NUMF8: NUMF8 {
+            compatible = "zmk,behavior-tap-dance";
+            label = "NUMF8";
+            #binding-cells = <0>;
+            bindings = <&kp N8>, <&kp F8>;
+        };
+        slayerhold: slayerhold {
+            compatible = "zmk,behavior-hold-tap";
+            label = "SLAYERHOLD";
+            bindings = <&sl>, <&kp>;
+
+            #binding-cells = <2>;
+            tapping-term-ms = <200>;
+            flavor = "tap-preferred";
+        };
+        plusequalpipep: plusequalpipep {
+            compatible = "zmk,behavior-tap-dance";
+            label = "PLUSEQUALPIPEP";
+            #binding-cells = <0>;
+            bindings = <&kp P>, <&kp EQUAL>, <&kp PIPE>;
+        };
+        tolayerhold: tolayerhold {
+            compatible = "zmk,behavior-hold-tap";
+            label = "TOLAYERHOLD";
+            bindings = <&to>, <&kp>;
+
+            #binding-cells = <2>;
+            tapping-term-ms = <200>;
+            flavor = "tap-preferred";
+        };
     };
 
     keymap {
         compatible = "zmk,keymap";
 
-        base {
+        alpha {
             bindings = <
-&kp GRAVE   &kp N1  &kp N2    &kp N3     &kp N4    &kp N5                                         &kp N6     &kp N7    &kp N8     &kp N9    &kp N0        &kp UP
-&kp TAB     &kp Q   &kp W     &kp E      &kp R     &kp T                                          &kp Y      &kp U     &kp I      &kp O     &kp P         &kp DOWN
-&bkspc_del  &kp A   &kp S     &kp D      &kp F     &kp G                                          &kp H      &kp J     &kp K      &kp L     &kp SEMI      &dash
-&cpslcktap  &kp Z   &kp X     &kp C      &kp V     &kp B    &kp K_PLAY_PAUSE    &kp RETURN        &kp N      &kp M     &kp COMMA  &kp DOT   &divideslash  &kp RSHFT
-                    &kp LALT  &kp LCTRL  &kp LGUI  &kp RET  &layerUpBase 1 1    &layerUpBase 2 2  &kp SPACE  &kp LGUI  &kp RCTRL  &kp RALT
+&kp ESC     &NUMF1  &NUMF2    &kp NUMBER_3      &kp N4    &NUMF5                                         &kp N6     &kp N7            &NUMF8     &kp N9            &kp N0           &kp UP
+&kp TAB     &kp Q   &kp W     &slayerhold 4 E   &kp R     &kp T                                          &kp Y      &kp U             &kp I      &kp O             &plusequalpipep  &kp DOWN
+&bkspc_del  &kp A   &kp S     &tphldkpkp DEL D  &kp F     &kp G                                          &kp H      &tolayerhold 5 J  &kp K      &tolayerhold 3 L  &kp SEMI         &dash
+&cpslcktap  &kp Z   &kp X     &kp C             &kp V     &kp B    &kp K_PLAY_PAUSE    &kp RETURN        &kp N      &kp M             &kp COMMA  &kp DOT           &divideslash     &cpslcktap
+                    &kp LALT  &kp LCTRL         &kp LGUI  &kp RET  &layerUpBase 1 1    &layerUpBase 2 2  &kp SPACE  &kp LGUI          &kp RCTRL  &kp RALT
             >;
 
             sensor-bindings = <&inc_dec_kp RIGHT LEFT>, <&inc_dec_kp UP DOWN>;
 
-            label = "base";
+            label = "alpha";
         };
 
-        lower {
+        NAV {
             bindings = <
 &bt BT_CLR  &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3          &bt BT_SEL 4                                                 &kp PG_UP      &trans    &trans    &trans     &trans           &trans
 &trans      &trans        &trans        &trans        &kp LEFT_BRACKET      &kp RIGHT_BRACKET                                            &kp PAGE_DOWN  &trans    &kp UP    &trans     &kp PRINTSCREEN  &trans
@@ -98,18 +146,18 @@
                           &trans        &trans        &trans                &trans                 &layerUpBase 1 1    &layerUpBase 0 0  &trans         &trans    &trans    &trans
             >;
 
-            label = "lower";
+            label = "NAV";
             sensor-bindings =
                 <&inc_dec_kp C_VOLUME_UP K_VOLUME_DOWN>,
                 <&inc_dec_kp C_FAST_FORWARD C_REWIND>;
         };
 
-        upper {
+        numsym {
             bindings = <
-&kp GRAVE  &kp F1         &kp F2                   &kp F3                 &kp F4                        &kp F5                                                 &kp F8         &kp F9           &kp F10          &kp F11          &kp F12       &trans
-&trans     &kp BACKSLASH  &tphldkpkp CARET DOLLAR  &tphldkpkp PLUS MINUS  &kp LEFT_BRACKET              &kp RIGHT_BRACKET                                      &kp F7         &kp KP_NUMBER_7  &kp KP_NUMBER_8  &kp KP_NUMBER_9  &kp ASTERISK  &trans
+&kp GRAVE  &kp F1         &kp F2                   &kp F3                 &kp F4                        &kp F5                                                 &kp F6         &kp F7           &kp F8           &kp F9           &kp F10       &trans
+&trans     &kp BACKSLASH  &tphldkpkp CARET DOLLAR  &tphldkpkp PLUS MINUS  &kp LS(LBRC)                  &kp LS(RBRC)                                           &kp F7         &kp KP_NUMBER_7  &kp KP_NUMBER_8  &kp KP_NUMBER_9  &kp ASTERISK  &trans
 &trans     &kp LESS_THAN  &tphldkpkp MINUS EQUAL   &kp LS(GREATER_THAN)   &kp LS(RS(LEFT_PARENTHESIS))  &kp LS(RIGHT_PARENTHESIS)                              &kp LS(COMMA)  &kp KP_N4        &kp KP_NUMBER_5  &kp KP_NUMBER_6  &kp MINUS     &kp PLUS
-&trans     &kp LS(O)      &kp LS(H)                &kp LS(C)              &kp LEFT_BRACE                &kp RIGHT_BRACE            &kp KP_NUMLOCK      &trans  &kp PERIOD     &kp KP_NUMBER_1  &kp KP_NUMBER_2  &kp KP_NUMBER_3  &divideslash  &kp EQUAL
+&trans     &kp LS(O)      &kp LS(H)                &kp LS(C)              &kp LBKT                      &kp RBKT                   &kp KP_NUMLOCK      &trans  &kp PERIOD     &kp KP_NUMBER_1  &kp KP_NUMBER_2  &kp KP_NUMBER_3  &divideslash  &kp EQUAL
                           &trans                   &trans                 &trans                        &kp SPACE                  &layerUpBase 0 0    &to 2   &kp ENTER      &kp KP_NUMBER_0  &trans           &trans
             >;
 
@@ -117,8 +165,43 @@
                 <&inc_dec_kp RIGHT_ARROW LEFT>,
                 <&inc_dec_kp UP DOWN>;
 
-            label = "upper";
+            label = "numsym";
+        };
+
+        latex {
+            bindings = <
+&trans  &NUMF1  &trans  &trans  &trans        &trans                          &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &kp LS(LBRC)  &kp LS(RBRC)                    &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &kp LS(LPAR)  &kp LS(RPAR)                    &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &kp LBKT      &kp RBKT      &trans    &trans  &trans  &trans  &trans  &trans  &trans  &trans
+                &trans  &trans  &trans        &trans        &trans    &trans  &trans  &trans  &trans  &trans
+            >;
+
+            label = "latex";
+        };
+
+        emacs {
+            bindings = <
+&trans  &NUMF1  &trans  &trans  &trans         &trans                    &trans         &trans               &trans               &trans               &trans  &trans
+&trans  &trans  &trans  &trans  &kp LA(KP_N7)  &trans                    &trans         &kp LC(KP_N7)        &kp LC(KP_N8)        &kp LC(KP_NUMBER_9)  &trans  &trans
+&trans  &trans  &trans  &trans  &kp LA(KP_N4)  &trans                    &trans         &kp LC(KP_NUMBER_4)  &kp LC(KP_NUMBER_5)  &kp LC(KP_N6)        &trans  &trans
+&trans  &trans  &trans  &trans  &trans         &trans  &trans    &trans  &kp LC(KP_N0)  &kp LC(KP_N1)        &kp LC(KP_N2)        &kp LC(KP_N3)        &trans  &trans
+                &trans  &trans  &trans         &trans  &trans    &trans  &trans         &trans               &trans               &trans
+            >;
+
+            label = "emacs";
+        };
+
+        julia {
+            bindings = <
+&trans  &NUMF1  &trans  &trans  &trans  &trans                    &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans                    &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans                    &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans  &trans  &trans
+                &trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans
+            >;
+
+            label = "julia";
         };
     };
 };
-
