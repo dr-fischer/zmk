@@ -128,11 +128,11 @@
 
         NAV {
             bindings = <
-&bt BT_CLR  &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3          &bt BT_SEL 4                                                 &kp PG_UP      &trans    &trans    &trans     &trans           &kp UP
-&trans      &trans        &kp UP        &trans        &kp LEFT_BRACKET      &kp RIGHT_BRACKET                                            &kp PAGE_DOWN  &trans    &kp UP    &trans     &kp PRINTSCREEN  &kp DOWN
-&trans      &kp LEFT      &kp DOWN      &kp RIGHT     &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS                                        &kp HOME       &kp LEFT  &kp DOWN  &kp RIGHT  &trans           &kp LEFT
-&trans      &trans        &trans        &trans        &kp LEFT_BRACE        &kp RIGHT_BRACE        &trans              &trans            &kp END        &trans    &trans    &trans     &trans           &kp RIGHT
-                          &trans        &trans        &trans                &trans                 &layerUpBase 1 1    &layerUpBase 0 0  &trans         &trans    &trans    &trans
+&bt BT_CLR  &bt BT_SEL 0     &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3          &bt BT_SEL 4                                                 &kp PG_UP      &trans    &trans    &trans     &trans           &kp UP
+&trans      &rgb_ug RGB_TOG  &kp UP        &trans        &kp LEFT_BRACKET      &kp RIGHT_BRACKET                                            &kp PAGE_DOWN  &trans    &kp UP    &trans     &kp PRINTSCREEN  &kp DOWN
+&trans      &kp LEFT         &kp DOWN      &kp RIGHT     &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS                                        &kp HOME       &kp LEFT  &kp DOWN  &kp RIGHT  &trans           &kp LEFT
+&trans      &trans           &trans        &trans        &kp LEFT_BRACE        &kp RIGHT_BRACE        &trans              &trans            &kp END        &trans    &trans    &trans     &trans           &kp RIGHT
+                             &trans        &trans        &trans                &trans                 &layerUpBase 1 1    &layerUpBase 0 0  &trans         &trans    &trans    &trans
             >;
 
             label = "NAV";
