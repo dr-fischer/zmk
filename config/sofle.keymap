@@ -14,6 +14,12 @@
             key-positions = <13 14>;
             layers = <0 2 1>;
         };
+
+        toalpha {
+            bindings = <&to 0>;
+            key-positions = <54 55>;
+            layers = <1 2 3 4>;
+        };
     };
 
     behaviors {
@@ -23,12 +29,14 @@
             #binding-cells = <0>;
             bindings = <&kp SQT>, <&kp MINUS>;
         };
+
         escgr: escgr {
             compatible = "zmk,behavior-tap-dance";
             label = "ESCGR";
             #binding-cells = <0>;
             bindings = <&kp GRAVE>, <&kp ESCAPE>;
         };
+
         layerUpBase: layerUpBase {
             compatible = "zmk,behavior-hold-tap";
             label = "LAYERUPBASE";
@@ -39,6 +47,7 @@
             tapping-term-ms = <200>;
             flavor = "tap-preferred";
         };
+
         bkspc_del: bkspc_del {
             compatible = "zmk,behavior-mod-morph";
             label = "BKSPC_DEL";
@@ -47,6 +56,7 @@
             #binding-cells = <0>;
             mods = <(MOD_LALT)>;
         };
+
         tphldkpkp: tphldkpkp {
             compatible = "zmk,behavior-hold-tap";
             label = "TPHLDKPKP";
@@ -56,40 +66,45 @@
             tapping-term-ms = <200>;
             flavor = "tap-preferred";
         };
+
         divideslash: divideslash {
             compatible = "zmk,behavior-tap-dance";
             label = "DIVIDESLASH";
             #binding-cells = <0>;
             bindings = <&kp SLASH>, <&kp BACKSLASH>;
         };
+
         cpslcktap: cpslcktap {
             compatible = "zmk,behavior-tap-dance";
             label = "CPSLCKTAP";
             #binding-cells = <0>;
             bindings = <&kp LEFT_SHIFT>, <&kp CAPSLOCK>;
         };
+
         slayerhold: slayerhold {
             compatible = "zmk,behavior-hold-tap";
             label = "SLAYERHOLD";
             bindings = <&sl>, <&kp>;
 
             #binding-cells = <2>;
-            tapping-term-ms = <200>;
+            tapping-term-ms = <500>;
             flavor = "tap-preferred";
         };
+
         plusequalpipep: plusequalpipep {
             compatible = "zmk,behavior-tap-dance";
             label = "PLUSEQUALPIPEP";
             #binding-cells = <0>;
             bindings = <&kp P>, <&kp PLUS>, <&kp EQUAL>, <&kp PIPE>;
         };
+
         tolayerhold: tolayerhold {
             compatible = "zmk,behavior-hold-tap";
             label = "TOLAYERHOLD";
             bindings = <&to>, <&kp>;
 
             #binding-cells = <2>;
-            tapping-term-ms = <200>;
+            tapping-term-ms = <500>;
             flavor = "tap-preferred";
         };
     };
@@ -98,13 +113,14 @@
         texce: texce {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&kp BSLH &kp C &kp E &kp RBKT &kp SPACE &kp SPACE &kp RBRC &kp LEFT &kp LEFT>;
+            bindings = <&kp BSLH &kp C &kp E &kp LEFT_BRACE &kp SPACE &kp SPACE &kp RBRC &kp LEFT &kp LEFT>;
             label = "TEXCE";
         };
+
         texfrac: texfrac {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&none &kp BSLH &kp F &kp R &kp A &kp C &kp RBKT &kp SPACE &kp SPACE &kp RBRC &kp RBKT &kp SPACE &kp SPACE &kp RBRC &kp LEFT &kp LEFT &kp LEFT &kp LEFT &kp LEFT>;
+            bindings = <&none &kp BSLH &kp F &kp R &kp A &kp C &kp LEFT_BRACE &kp SPACE &kp SPACE &kp RBRC &kp LEFT_BRACE &kp SPACE &kp SPACE &kp RBRC &kp LEFT &kp LEFT &kp LEFT &kp LEFT &kp LEFT>;
             label = "TEXFRAC";
         };
     };
@@ -185,4 +201,3 @@
         };
     };
 };
-
