@@ -25,6 +25,16 @@
             bindings = <&tog 1>;
             key-positions = <11 23>;
         };
+
+        leftspc {
+            bindings = <&kp SPACE>;
+            key-positions = <53 52>;
+        };
+
+        rtent {
+            bindings = <&kp RET>;
+            key-positions = <49 35>;
+        };
     };
 
     behaviors {
@@ -101,6 +111,8 @@
             label = "PLUSEQUALPIPEP";
             #binding-cells = <0>;
             bindings = <&kp P>, <&kp PLUS>, <&kp EQUAL>, <&kp PIPE>;
+
+            tapping-term-ms = <100>;
         };
 
         tolayerhold: tolayerhold {
@@ -109,7 +121,17 @@
             bindings = <&to>, <&kp>;
 
             #binding-cells = <2>;
-            tapping-term-ms = <500>;
+            tapping-term-ms = <350>;
+            flavor = "tap-preferred";
+        };
+
+        molayerhold: molayerhold {
+            compatible = "zmk,behavior-hold-tap";
+            label = "MOLAYERHOLD";
+            bindings = <&mo>, <&kp>;
+
+            #binding-cells = <2>;
+            tapping-term-ms = <200>;
             flavor = "tap-preferred";
         };
     };
@@ -136,7 +158,7 @@
         alpha {
             bindings = <
 &kp ESC     &tphldkpkp F1 NUMBER_1  &tphldkpkp F2 NUMBER_2  &tphldkpkp F3 NUMBER_3  &tphldkpkp F4 NUMBER_4  &tphldkpkp F5 NUMBER_5                                        &tphldkpkp F6 NUMBER_6  &tphldkpkp F7 NUMBER_7  &tphldkpkp F8 NUMBER_8  &tphldkpkp F9 N9  &tphldkpkp F10 NUMBER_0  &kp UP
-&kp TAB     &kp Q                   &kp W                   &slayerhold 4 E         &kp R                   &kp T                                                         &kp Y                   &kp U                   &kp I                   &kp O             &plusequalpipep          &kp DOWN
+&kp TAB     &kp Q                   &kp W                   &molayerhold 4 E        &kp R                   &kp T                                                         &kp Y                   &kp U                   &kp I                   &kp O             &plusequalpipep          &kp DOWN
 &bkspc_del  &kp A                   &kp S                   &tphldkpkp DEL D        &kp F                   &kp G                                                         &kp H                   &kp J                   &kp K                   &tolayerhold 3 L  &kp SEMI                 &dash
 &cpslcktap  &kp Z                   &kp X                   &kp C                   &kp V                   &kp B                   &kp K_PLAY_PAUSE    &kp RETURN        &kp N                   &kp M                   &kp COMMA               &kp DOT           &divideslash             &cpslcktap
                                     &kp LALT                &kp LCTRL               &kp LGUI                &tphldkpkp SPACE RET    &layerUpBase 1 1    &layerUpBase 2 2  &kp SPACE               &kp LGUI                &kp RCTRL               &kp RALT
