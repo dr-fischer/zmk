@@ -35,6 +35,11 @@
             bindings = <&kp RET>;
             key-positions = <49 35>;
         };
+
+        rtbkspc {
+            bindings = <&kp BACKSPACE>;
+            key-positions = <49 35 11>;
+        };
     };
 
     behaviors {
@@ -102,7 +107,7 @@
             compatible = "zmk,behavior-tap-dance";
             label = "PLUSEQUALPIPEP";
             #binding-cells = <0>;
-            bindings = <&kp P>, <&kp P>, <&kp PLUS>, <&kp EQUAL>, <&kp PIPE>;
+            bindings = <&kp PLUS>, <&kp EQUAL>, <&kp PIPE>;
         };
 
         tolayerhold: tolayerhold {
@@ -131,6 +136,58 @@
             #binding-cells = <0>;
             bindings = <&kp D>, <&kp D>, <&kp DEL>;
         };
+
+        plusequal: plusequal {
+            compatible = "zmk,behavior-mod-morph";
+            label = "PLUSEQUAL";
+            bindings = <&kp P>, <&plusequalpipep>;
+
+            #binding-cells = <0>;
+            mods = <(MOD_LALT)>;
+        };
+
+        plusparen0: plusparen0 {
+            compatible = "zmk,behavior-mod-morph";
+            label = "PLUSPAREN0";
+            bindings = <&tphldkpkp F11 N0>, <&plusequalpipep>;
+
+            #binding-cells = <0>;
+            mods = <(MOD_LALT)>;
+        };
+
+        plusparen0rt: plusparen0rt {
+            compatible = "zmk,behavior-mod-morph";
+            label = "PLUSPAREN0RT";
+            bindings = <&tphldkpkp F11 N0>, <&plusequalpipep>;
+
+            #binding-cells = <0>;
+            mods = <(MOD_RALT)>;
+        };
+
+        minus9: minus9 {
+            compatible = "zmk,behavior-mod-morph";
+            label = "MINUS9";
+            bindings = <&tphldkpkp F9 N9>, <&minusunder>;
+
+            #binding-cells = <0>;
+            mods = <(MOD_LALT)>;
+        };
+
+        minusunder: minusunder {
+            compatible = "zmk,behavior-tap-dance";
+            label = "MINUSUNDER";
+            #binding-cells = <0>;
+            bindings = <&kp MINUS>, <&kp UNDER>;
+        };
+
+        minus9r: minus9r {
+            compatible = "zmk,behavior-mod-morph";
+            label = "MINUS9R";
+            bindings = <&tphldkpkp F9 N9>, <&minusunder>;
+
+            #binding-cells = <0>;
+            mods = <(MOD_RALT)>;
+        };
     };
 
     macros {
@@ -154,10 +211,10 @@
 
         alpha {
             bindings = <
-&kp ESC     &tphldkpkp F1 NUMBER_1  &tphldkpkp F2 NUMBER_2  &tphldkpkp F3 NUMBER_3  &tphldkpkp F4 NUMBER_4  &tphldkpkp F5 NUMBER_5                                        &tphldkpkp F6 NUMBER_6  &tphldkpkp F7 NUMBER_7  &tphldkpkp F8 NUMBER_8  &tphldkpkp F9 N9  &tphldkpkp F10 NUMBER_0  &kp UP
-&kp TAB     &kp Q                   &kp W                   &molayerhold 4 E        &kp R                   &kp T                                                         &kp Y                   &kp U                   &kp I                   &kp O             &plusequalpipep          &kp DOWN
-&bkspc_del  &kp A                   &kp S                   &deletedtap             &kp F                   &kp G                                                         &kp H                   &kp J                   &kp K                   &molayerhold 3 L  &kp SEMI                 &dash
-&cpslcktap  &kp Z                   &kp X                   &kp C                   &kp V                   &kp B                   &kp K_PLAY_PAUSE    &kp RETURN        &kp N                   &kp M                   &kp COMMA               &kp DOT           &divideslash             &cpslcktap
+&kp ESC     &tphldkpkp F1 NUMBER_1  &tphldkpkp F2 NUMBER_2  &tphldkpkp F3 NUMBER_3  &tphldkpkp F4 NUMBER_4  &tphldkpkp F5 NUMBER_5                                        &tphldkpkp F6 NUMBER_6  &tphldkpkp F7 NUMBER_7  &tphldkpkp F8 NUMBER_8  &minus9           &plusparen0      &kp UP
+&kp TAB     &kp Q                   &kp W                   &molayerhold 4 E        &kp R                   &kp T                                                         &kp Y                   &kp U                   &kp I                   &kp O             &plusequalpipep  &kp DOWN
+&bkspc_del  &kp A                   &kp S                   &tphldkpkp DEL D        &kp F                   &kp G                                                         &kp H                   &kp J                   &kp K                   &molayerhold 3 L  &kp SEMI         &dash
+&cpslcktap  &kp Z                   &kp X                   &kp C                   &kp V                   &kp B                   &kp K_PLAY_PAUSE    &kp RETURN        &kp N                   &kp M                   &kp COMMA               &kp DOT           &divideslash     &cpslcktap
                                     &kp LALT                &kp LCTRL               &kp LGUI                &tphldkpkp SPACE RET    &layerUpBase 1 1    &layerUpBase 2 2  &kp SPACE               &kp LGUI                &kp RCTRL               &kp RALT
             >;
 
