@@ -152,16 +152,7 @@
             bindings = <&tphldkpkp F11 N0>, <&plusequalpipep>;
 
             #binding-cells = <0>;
-            mods = <(MOD_LALT)>;
-        };
-
-        plusparen0rt: plusparen0rt {
-            compatible = "zmk,behavior-mod-morph";
-            label = "PLUSPAREN0RT";
-            bindings = <&tphldkpkp F11 N0>, <&plusequalpipep>;
-
-            #binding-cells = <0>;
-            mods = <(MOD_RALT)>;
+            mods = <(MOD_LALT|MOD_RALT)>;
         };
 
         minus9: minus9 {
@@ -170,7 +161,7 @@
             bindings = <&tphldkpkp F9 N9>, <&minusunder>;
 
             #binding-cells = <0>;
-            mods = <(MOD_LALT)>;
+            mods = <(MOD_LALT|MOD_RALT)>;
         };
 
         minusunder: minusunder {
@@ -178,15 +169,6 @@
             label = "MINUSUNDER";
             #binding-cells = <0>;
             bindings = <&kp MINUS>, <&kp UNDER>;
-        };
-
-        minus9r: minus9r {
-            compatible = "zmk,behavior-mod-morph";
-            label = "MINUS9R";
-            bindings = <&tphldkpkp F9 N9>, <&minusunder>;
-
-            #binding-cells = <0>;
-            mods = <(MOD_RALT)>;
         };
     };
 
