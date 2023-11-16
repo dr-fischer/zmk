@@ -137,31 +137,13 @@
             bindings = <&kp D>, <&kp D>, <&kp DEL>;
         };
 
-        plusequal: plusequal {
+        plus0: plus0 {
             compatible = "zmk,behavior-mod-morph";
-            label = "PLUSEQUAL";
-            bindings = <&kp P>, <&plusequalpipep>;
-
-            #binding-cells = <0>;
-            mods = <(MOD_LALT)>;
-        };
-
-        plusparen0: plusparen0 {
-            compatible = "zmk,behavior-mod-morph";
-            label = "PLUSPAREN0";
+            label = "PLUS0";
             bindings = <&tphldkpkp F11 N0>, <&plusequalpipep>;
 
             #binding-cells = <0>;
-            mods = <(MOD_LALT)>;
-        };
-
-        plusparen0rt: plusparen0rt {
-            compatible = "zmk,behavior-mod-morph";
-            label = "PLUSPAREN0RT";
-            bindings = <&tphldkpkp F11 N0>, <&plusequalpipep>;
-
-            #binding-cells = <0>;
-            mods = <(MOD_RALT)>;
+            mods = <(MOD_LALT|MOD_RALT)>;
         };
 
         minus9: minus9 {
@@ -170,7 +152,7 @@
             bindings = <&tphldkpkp F9 N9>, <&minusunder>;
 
             #binding-cells = <0>;
-            mods = <(MOD_LALT)>;
+            mods = <(MOD_LALT|MOD_RALT)>;
         };
 
         minusunder: minusunder {
@@ -178,15 +160,6 @@
             label = "MINUSUNDER";
             #binding-cells = <0>;
             bindings = <&kp MINUS>, <&kp UNDER>;
-        };
-
-        minus9r: minus9r {
-            compatible = "zmk,behavior-mod-morph";
-            label = "MINUS9R";
-            bindings = <&tphldkpkp F9 N9>, <&minusunder>;
-
-            #binding-cells = <0>;
-            mods = <(MOD_RALT)>;
         };
     };
 
@@ -211,7 +184,7 @@
 
         alpha {
             bindings = <
-&kp ESC     &tphldkpkp F1 NUMBER_1  &tphldkpkp F2 NUMBER_2  &tphldkpkp F3 NUMBER_3  &tphldkpkp F4 NUMBER_4  &tphldkpkp F5 NUMBER_5                                        &tphldkpkp F6 NUMBER_6  &tphldkpkp F7 NUMBER_7  &tphldkpkp F8 NUMBER_8  &minus9           &plusparen0   &kp UP
+&kp ESC     &tphldkpkp F1 NUMBER_1  &tphldkpkp F2 NUMBER_2  &tphldkpkp F3 NUMBER_3  &tphldkpkp F4 NUMBER_4  &tphldkpkp F5 NUMBER_5                                        &tphldkpkp F6 NUMBER_6  &tphldkpkp F7 NUMBER_7  &tphldkpkp F8 NUMBER_8  &minus9           &plus0        &kp UP
 &kp TAB     &kp Q                   &kp W                   &molayerhold 4 E        &kp R                   &kp T                                                         &kp Y                   &kp U                   &kp I                   &kp O             &kp P         &kp DOWN
 &bkspc_del  &kp A                   &kp S                   &tphldkpkp DEL D        &kp F                   &kp G                                                         &kp H                   &kp J                   &kp K                   &molayerhold 3 L  &kp SEMI      &dash
 &cpslcktap  &kp Z                   &kp X                   &kp C                   &kp V                   &kp B                   &kp K_PLAY_PAUSE    &kp RETURN        &kp N                   &kp M                   &kp COMMA               &kp DOT           &divideslash  &cpslcktap
@@ -282,4 +255,3 @@
         };
     };
 };
-
