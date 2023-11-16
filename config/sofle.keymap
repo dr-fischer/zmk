@@ -45,20 +45,12 @@
             bindings = <&kp SQT>, <&kp MINUS>;
         };
 
-        escgr: escgr {
-            compatible = "zmk,behavior-tap-dance";
-            label = "ESCGR";
-            #binding-cells = <0>;
-            bindings = <&kp GRAVE>, <&kp ESCAPE>;
-        };
-
         layerUpBase: layerUpBase {
             compatible = "zmk,behavior-hold-tap";
             label = "LAYERUPBASE";
             bindings = <&mo>, <&to>;
 
             #binding-cells = <2>;
-            hold-trigger-key-positions = <55>;
             tapping-term-ms = <200>;
             flavor = "tap-preferred";
         };
@@ -110,9 +102,7 @@
             compatible = "zmk,behavior-tap-dance";
             label = "PLUSEQUALPIPEP";
             #binding-cells = <0>;
-            bindings = <&kp P>, <&kp PLUS>, <&kp EQUAL>, <&kp PIPE>;
-
-            tapping-term-ms = <150>;
+            bindings = <&kp P>, <&kp P>, <&kp PLUS>, <&kp EQUAL>, <&kp PIPE>;
         };
 
         tolayerhold: tolayerhold {
@@ -133,6 +123,13 @@
             #binding-cells = <2>;
             tapping-term-ms = <200>;
             flavor = "tap-preferred";
+        };
+
+        deletedtap: deletedtap {
+            compatible = "zmk,behavior-tap-dance";
+            label = "DELETEDTAP";
+            #binding-cells = <0>;
+            bindings = <&kp D>, <&kp D>, <&kp DEL>;
         };
     };
 
@@ -159,7 +156,7 @@
             bindings = <
 &kp ESC     &tphldkpkp F1 NUMBER_1  &tphldkpkp F2 NUMBER_2  &tphldkpkp F3 NUMBER_3  &tphldkpkp F4 NUMBER_4  &tphldkpkp F5 NUMBER_5                                        &tphldkpkp F6 NUMBER_6  &tphldkpkp F7 NUMBER_7  &tphldkpkp F8 NUMBER_8  &tphldkpkp F9 N9  &tphldkpkp F10 NUMBER_0  &kp UP
 &kp TAB     &kp Q                   &kp W                   &molayerhold 4 E        &kp R                   &kp T                                                         &kp Y                   &kp U                   &kp I                   &kp O             &plusequalpipep          &kp DOWN
-&bkspc_del  &kp A                   &kp S                   &tphldkpkp DEL D        &kp F                   &kp G                                                         &kp H                   &kp J                   &kp K                   &molayerhold 3 L  &kp SEMI                 &dash
+&bkspc_del  &kp A                   &kp S                   &deletedtap             &kp F                   &kp G                                                         &kp H                   &kp J                   &kp K                   &molayerhold 3 L  &kp SEMI                 &dash
 &cpslcktap  &kp Z                   &kp X                   &kp C                   &kp V                   &kp B                   &kp K_PLAY_PAUSE    &kp RETURN        &kp N                   &kp M                   &kp COMMA               &kp DOT           &divideslash             &cpslcktap
                                     &kp LALT                &kp LCTRL               &kp LGUI                &tphldkpkp SPACE RET    &layerUpBase 1 1    &layerUpBase 2 2  &kp SPACE               &kp LGUI                &kp RCTRL               &kp RALT
             >;
@@ -174,7 +171,7 @@
 &bt BT_CLR  &bt BT_SEL 0     &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3          &bt BT_SEL 4                                                 &kp PG_UP      &trans    &trans    &trans     &trans           &kp UP
 &trans      &rgb_ug RGB_TOG  &kp UP        &trans        &kp LEFT_BRACE        &kp RIGHT_BRACE                                              &kp PAGE_DOWN  &trans    &kp UP    &trans     &kp PRINTSCREEN  &kp DOWN
 &trans      &kp LEFT         &kp DOWN      &kp RIGHT     &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS                                        &kp HOME       &kp LEFT  &kp DOWN  &kp RIGHT  &trans           &kp LEFT
-&trans      &trans           &trans        &trans        &kp LEFT_BRACKET      &kp RIGHT_BRACKET      &trans              &trans            &kp END        &trans    &trans    &trans     &trans           &kp RIGHT
+&trans      &trans           &trans        &trans        &kp LEFT_BRACKET      &kp RIGHT_BRACKET      &to 0               &trans            &kp END        &trans    &trans    &trans     &trans           &kp RIGHT
                              &trans        &trans        &trans                &trans                 &layerUpBase 1 1    &layerUpBase 0 0  &trans         &trans    &trans    &trans
             >;
 
@@ -228,4 +225,3 @@
         };
     };
 };
-
