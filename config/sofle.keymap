@@ -103,9 +103,9 @@
             flavor = "tap-preferred";
         };
 
-        plusequalpipep: plusequalpipep {
+        plusequalpipe: plusequalpipe {
             compatible = "zmk,behavior-tap-dance";
-            label = "PLUSEQUALPIPEP";
+            label = "PLUSEQUALPIPE";
             #binding-cells = <0>;
             bindings = <&kp PLUS>, <&kp EQUAL>, <&kp PIPE>;
         };
@@ -140,7 +140,7 @@
         plus0: plus0 {
             compatible = "zmk,behavior-mod-morph";
             label = "PLUS0";
-            bindings = <&tphldkpkp F11 N0>, <&plusequalpipep>;
+            bindings = <&tphldkpkp F11 N0>, <&plusequalpipe>;
 
             #binding-cells = <0>;
             mods = <(MOD_LALT|MOD_RALT)>;
@@ -255,3 +255,4 @@
         };
     };
 };
+
