@@ -107,7 +107,9 @@
             compatible = "zmk,behavior-tap-dance";
             label = "PLUSEQUALPIPE";
             #binding-cells = <0>;
-            bindings = <&kp PLUS>, <&kp EQUAL>, <&kp PIPE>;
+            bindings = <&kp PLUS>, <&kp KP_EQUAL>, <&kp PIPE>;
+
+            tapping-term-ms = <150>;
         };
 
         tolayerhold: tolayerhold {
@@ -255,4 +257,3 @@
         };
     };
 };
-
