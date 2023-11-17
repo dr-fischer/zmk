@@ -163,6 +163,13 @@
             #binding-cells = <0>;
             bindings = <&kp MINUS>, <&kp UNDER>;
         };
+
+        texsubsuper: texsubsuper {
+            compatible = "zmk,behavior-tap-dance";
+            label = "TEXSUBSUPER";
+            #binding-cells = <0>;
+            bindings = <&texsuper>, <&texsub>;
+        };
     };
 
     macros {
@@ -179,6 +186,20 @@
             bindings = <&none &kp BSLH &kp F &kp R &kp A &kp C &kp LEFT_BRACE &kp SPACE &kp SPACE &kp RBRC &kp LEFT_BRACE &kp SPACE &kp SPACE &kp RBRC &kp LEFT &kp LEFT &kp LEFT &kp LEFT &kp LEFT>;
             label = "TEXFRAC";
         };
+
+        texsuper: texsuper {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp CARET &kp LBRC &kp SPACE &kp SPACE &kp RIGHT_BRACE &kp LEFT &kp LEFT>;
+            label = "TEXSUPER";
+        };
+
+        texsub: texsub {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp UNDERSCORE &kp LBRC &kp SPACE &kp SPACE &kp RIGHT_BRACE &kp LEFT &kp LEFT>;
+            label = "TEXSUB";
+        };
     };
 
     keymap {
@@ -186,11 +207,11 @@
 
         alpha {
             bindings = <
-&kp ESC     &tphldkpkp F1 NUMBER_1  &tphldkpkp F2 NUMBER_2  &tphldkpkp F3 NUMBER_3  &tphldkpkp F4 NUMBER_4  &tphldkpkp F5 NUMBER_5                                        &tphldkpkp F6 NUMBER_6  &tphldkpkp F7 NUMBER_7  &tphldkpkp F8 NUMBER_8  &minus9           &plus0        &kp UP
-&kp TAB     &kp Q                   &kp W                   &molayerhold 4 E        &kp R                   &kp T                                                         &kp Y                   &kp U                   &kp I                   &kp O             &kp P         &kp DOWN
-&bkspc_del  &kp A                   &kp S                   &tphldkpkp DEL D        &kp F                   &kp G                                                         &kp H                   &kp J                   &kp K                   &molayerhold 3 L  &kp SEMI      &dash
-&cpslcktap  &kp Z                   &kp X                   &kp C                   &kp V                   &kp B                   &kp K_PLAY_PAUSE    &kp RETURN        &kp N                   &kp M                   &kp COMMA               &kp DOT           &divideslash  &cpslcktap
-                                    &kp LALT                &kp LCTRL               &kp LGUI                &tphldkpkp SPACE RET    &layerUpBase 1 1    &layerUpBase 2 2  &kp SPACE               &kp LGUI                &kp RCTRL               &kp RALT
+&kp ESC     &tphldkpkp F1 NUMBER_1  &tphldkpkp F2 NUMBER_2  &tphldkpkp F3 NUMBER_3  &tphldkpkp F4 NUMBER_4  &tphldkpkp F5 NUMBER_5                                            &tphldkpkp F6 NUMBER_6  &tphldkpkp F7 NUMBER_7  &tphldkpkp F8 NUMBER_8  &tphldkpkp F9 N9  &tphldkpkp F11 N0  &kp UP
+&kp TAB     &kp Q                   &kp W                   &molayerhold 4 E        &kp R                   &kp T                                                             &kp Y                   &kp U                   &kp I                   &kp O             &kp P              &kp DOWN
+&bkspc_del  &molayerhold 5 A        &kp S                   &tphldkpkp DEL D        &kp F                   &kp G                                                             &kp H                   &kp J                   &kp K                   &molayerhold 3 L  &kp SEMI           &dash
+&cpslcktap  &kp Z                   &kp X                   &kp C                   &kp V                   &kp B                   &kp K_PLAY_PAUSE        &kp RETURN        &kp N                   &kp M                   &kp COMMA               &kp DOT           &divideslash       &cpslcktap
+                                    &kp LALT                &kp LCTRL               &kp LGUI                &molayerhold 1 RET      &molayerhold 2 SPACE    &layerUpBase 2 2  &kp SPACE               &kp LGUI                &kp RCTRL               &kp RALT
             >;
 
             sensor-bindings = <&inc_dec_kp RIGHT LEFT>, <&inc_dec_kp UP DOWN>;
@@ -200,11 +221,11 @@
 
         NAV {
             bindings = <
-&bt BT_CLR  &bt BT_SEL 0     &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3          &bt BT_SEL 4                                                 &kp PG_UP      &trans    &trans    &trans     &trans           &kp UP
-&trans      &rgb_ug RGB_TOG  &kp UP        &trans        &kp LEFT_BRACE        &kp RIGHT_BRACE                                              &kp PAGE_DOWN  &trans    &kp UP    &trans     &kp PRINTSCREEN  &kp DOWN
-&trans      &kp LEFT         &kp DOWN      &kp RIGHT     &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS                                        &kp HOME       &kp LEFT  &kp DOWN  &kp RIGHT  &trans           &kp LEFT
-&trans      &trans           &trans        &trans        &kp LEFT_BRACKET      &kp RIGHT_BRACKET      &to 0               &trans            &kp END        &trans    &trans    &trans     &trans           &kp RIGHT
-                             &trans        &trans        &trans                &trans                 &layerUpBase 1 1    &layerUpBase 0 0  &trans         &trans    &trans    &trans
+&bt BT_CLR  &bt BT_SEL 0     &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3          &bt BT_SEL 4                                       &kp PG_UP  &trans    &trans    &trans     &trans           &kp UP
+&trans      &rgb_ug RGB_TOG  &kp UP        &trans        &kp LEFT_BRACE        &kp RIGHT_BRACE                                    &kp END    &trans    &kp UP    &trans     &kp PRINTSCREEN  &kp DOWN
+&trans      &kp LEFT         &kp DOWN      &kp RIGHT     &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS                              &kp HOME   &kp LEFT  &kp DOWN  &kp RIGHT  &trans           &kp LEFT
+&trans      &trans           &trans        &trans        &kp LEFT_BRACKET      &kp RIGHT_BRACKET      &to 0     &trans            &kp PG_DN  &trans    &trans    &trans     &trans           &kp RIGHT
+                             &trans        &trans        &trans                &trans                 &trans    &layerUpBase 0 0  &trans     &trans    &trans    &trans
             >;
 
             label = "NAV";
@@ -215,11 +236,11 @@
 
         numsym {
             bindings = <
-&kp ESCAPE  &kp F1           &kp F2       &kp F3     &kp F4                &kp F5                                             &none          &kp EQUAL        &kp FSLH         &kp STAR         &kp MINUS  &trans
-&trans      &kp EXCLAMATION  &kp AT_SIGN  &kp HASH   &kp LEFT_BRACE        &kp RIGHT_BRACE                                    &kp PIPE       &kp KP_NUMBER_7  &kp KP_NUMBER_8  &kp KP_NUMBER_9  &kp PLUS   &trans
-&trans      &kp DOLLAR       &kp PERCENT  &kp CARET  &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS                              &kp LS(COMMA)  &kp KP_N4        &kp KP_NUMBER_5  &kp KP_NUMBER_6  &kp RET    &kp LEFT
-&trans      &kp AMPERSAND    &kp GRAVE    &kp TILDE  &kp LBKT              &kp RBKT               &kp KP_NUMLOCK      &trans  &kp N0         &kp KP_NUMBER_1  &kp KP_NUMBER_2  &kp KP_NUMBER_3  &kp DOT    &kp RIGHT
-                             &trans       &trans     &trans                &kp SPACE              &layerUpBase 0 0    &to 2   &kp ENTER      &kp KP_N0        &trans           &trans
+&kp ESCAPE  &kp F1           &kp F2       &kp F3     &kp F4                &kp F5                                           &none          &kp EQUAL        &kp FSLH         &kp STAR         &kp MINUS  &trans
+&trans      &kp EXCLAMATION  &kp AT_SIGN  &kp HASH   &kp LEFT_BRACE        &kp RIGHT_BRACE                                  &kp PIPE       &kp KP_NUMBER_7  &kp KP_NUMBER_8  &kp KP_NUMBER_9  &kp PLUS   &trans
+&trans      &kp DOLLAR       &kp PERCENT  &kp CARET  &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS                            &kp LS(COMMA)  &kp KP_N4        &kp KP_NUMBER_5  &kp KP_NUMBER_6  &kp RET    &kp LEFT
+&trans      &kp AMPERSAND    &kp GRAVE    &kp TILDE  &kp LBKT              &kp RBKT               &kp KP_NUMLOCK    &trans  &kp N0         &kp KP_NUMBER_1  &kp KP_NUMBER_2  &kp KP_NUMBER_3  &kp DOT    &kp RIGHT
+                             &trans       &trans     &trans                &kp SPACE              &trans            &to 0   &kp ENTER      &kp KP_N0        &trans           &trans
             >;
 
             sensor-bindings =
@@ -231,11 +252,11 @@
 
         latex {
             bindings = <
-&kp ESC  &kp N1      &kp N2     &kp N3      &kp N4                &kp N5                                   &kp N6     &kp N7  &kp N8     &kp N9   &kp N0  &trans
-&trans   &kp LS(LT)  &kp EQUAL  &kp LS(GT)  &kp LEFT_BRACE        &kp RIGHT_BRACE                          &kp MINUS  &trans  &kp I      &kp O    &kp P   &trans
-&trans   &kp A       &kp S      &none       &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS                    &kp H      &texce  &texfrac   &trans   &trans  &trans
-&trans   &trans      &kp X      &kp C       &kp LBKT              &kp RBKT               &trans    &trans  &kp N      &kp M   &kp COMMA  &kp DOT  &trans  &trans
-                     &trans     &trans      &trans                &trans                 &trans    &trans  &trans     &trans  &trans     &trans
+&kp ESC  &kp N1      &kp N2     &kp N3      &kp N4                &kp N5                                   &kp N6     &kp N7        &kp N8     &kp N9   &kp N0  &trans
+&trans   &kp LS(LT)  &kp EQUAL  &kp LS(GT)  &kp LEFT_BRACE        &kp RIGHT_BRACE                          &kp MINUS  &texsubsuper  &kp I      &kp O    &kp P   &trans
+&trans   &kp A       &kp S      &none       &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS                    &kp H      &texce        &texfrac   &trans   &trans  &trans
+&trans   &trans      &kp X      &kp C       &kp LBKT              &kp RBKT               &trans    &trans  &kp N      &kp M         &kp COMMA  &kp DOT  &trans  &trans
+                     &trans     &trans      &trans                &trans                 &trans    &trans  &trans     &trans        &trans     &trans
             >;
 
             label = "latex";
@@ -255,5 +276,19 @@
 
             label = "emacs";
         };
+
+        programming {
+            bindings = <
+&kp ESC  &kp N1  &kp N2  &kp N3  &kp N4  &kp N5                                  &kp N6                 &kp N7           &kp N8     &kp N9     &kp N0    &kp UP
+&trans   &none   &none   &none   &none   &kp LS(LBRC)                            &kp LS(RBRC)           &kp KP_MULTIPLY  &kp MINUS  &kp PLUS   &kp PIPE  &kp DOWN
+&trans   &none   &none   &none   &none   &kp LBKT                                &kp RBKT               &kp KP_DIVIDE    &kp UNDER  &kp EQUAL  &none     &kp LEFT
+&trans   &none   &none   &none   &none   &kp LEFT_PARENTHESIS  &trans    &trans  &kp RIGHT_PARENTHESIS  &kp BACKSLASH    &none      &kp DOT    &none     &kp RIGHT
+                 &trans  &trans  &trans  &trans                &trans    &trans  &trans                 &trans           &trans     &trans
+            >;
+
+            label = "programming";
+            sensor-bindings = <&inc_dec_kp RIGHT LEFT>, <&inc_dec_kp UP DOWN>;
+        };
     };
 };
+
