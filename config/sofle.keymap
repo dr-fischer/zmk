@@ -236,11 +236,11 @@
 
         numsym {
             bindings = <
-&kp ESCAPE  &kp F1           &kp F2       &kp F3     &kp F4                &kp F5                                           &none          &kp EQUAL        &kp FSLH         &kp STAR         &kp MINUS  &trans
-&trans      &kp EXCLAMATION  &kp AT_SIGN  &kp HASH   &kp LEFT_BRACE        &kp RIGHT_BRACE                                  &kp PIPE       &kp KP_NUMBER_7  &kp KP_NUMBER_8  &kp KP_NUMBER_9  &kp PLUS   &trans
-&trans      &kp DOLLAR       &kp PERCENT  &kp CARET  &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS                            &kp LS(COMMA)  &kp KP_N4        &kp KP_NUMBER_5  &kp KP_NUMBER_6  &kp RET    &kp LEFT
-&trans      &kp AMPERSAND    &kp GRAVE    &kp TILDE  &kp LBKT              &kp RBKT               &kp KP_NUMLOCK    &trans  &kp N0         &kp KP_NUMBER_1  &kp KP_NUMBER_2  &kp KP_NUMBER_3  &kp DOT    &kp RIGHT
-                             &trans       &trans     &trans                &kp SPACE              &trans            &to 0   &kp ENTER      &kp KP_N0        &trans           &trans
+&kp ESCAPE  &kp F1           &kp F2       &kp F3     &kp F4                &kp F5                                           &none         &kp EQUAL        &kp FSLH         &kp STAR         &kp MINUS     &trans
+&trans      &kp EXCLAMATION  &kp AT_SIGN  &kp HASH   &kp LEFT_BRACE        &kp RIGHT_BRACE                                  &kp PIPE      &kp KP_NUMBER_7  &kp KP_NUMBER_8  &kp KP_NUMBER_9  &kp PLUS      &trans
+&trans      &kp DOLLAR       &kp PERCENT  &kp CARET  &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS                            &kp KP_COMMA  &kp KP_N4        &kp KP_NUMBER_5  &kp KP_NUMBER_6  &kp KP_COMMA  &kp LEFT
+&trans      &kp AMPERSAND    &kp GRAVE    &kp TILDE  &kp LBKT              &kp RBKT               &kp KP_NUMLOCK    &trans  &kp N0        &kp KP_NUMBER_1  &kp KP_NUMBER_2  &kp KP_NUMBER_3  &kp DOT       &kp RIGHT
+                             &trans       &trans     &trans                &kp SPACE              &trans            &to 0   &kp ENTER     &kp KP_N0        &trans           &trans
             >;
 
             sensor-bindings =
@@ -279,11 +279,11 @@
 
         arithmetic {
             bindings = <
-&kp ESC  &kp N1    &kp N2    &kp N3     &kp N4  &kp N5                                  &kp N6                 &kp N7           &kp N8     &kp N9     &kp N0    &kp UP
-&trans   &kp DEL   &kp UP    &none      &none   &kp LS(LBRC)                            &kp LS(RBRC)           &kp KP_MULTIPLY  &kp MINUS  &kp PLUS   &kp PIPE  &kp DOWN
-&trans   &kp LEFT  &kp DOWN  &kp RIGHT  &none   &kp LBKT                                &kp RBKT               &kp KP_DIVIDE    &kp UNDER  &kp EQUAL  &none     &kp LEFT
-&trans   &none     &none     &none      &none   &kp LEFT_PARENTHESIS  &trans    &trans  &kp RIGHT_PARENTHESIS  &kp BACKSLASH    &none      &kp DOT    &none     &kp RIGHT
-                   &trans    &trans     &trans  &trans                &trans    &trans  &trans                 &trans           &trans     &trans
+&kp ESC  &kp N1    &kp N2    &kp N3     &kp N4  &kp N5                                       &kp N6                 &kp N7           &kp N8     &kp N9     &kp N0    &kp UP
+&trans   &kp DEL   &kp UP    &none      &none   &kp LS(LBRC)                                 &kp LS(RBRC)           &kp KP_MULTIPLY  &kp MINUS  &kp PLUS   &kp PIPE  &kp DOWN
+&trans   &kp LEFT  &kp DOWN  &kp RIGHT  &none   &kp LBKT                                     &kp RBKT               &kp KP_DIVIDE    &kp UNDER  &kp EQUAL  &none     &kp LEFT
+&trans   &none     &none     &none      &none   &kp LEFT_PARENTHESIS  &trans         &trans  &kp RIGHT_PARENTHESIS  &kp BACKSLASH    &none      &kp DOT    &none     &kp RIGHT
+                   &trans    &trans     &trans  &trans                &kp LS(RET)    &trans  &trans                 &trans           &trans     &trans
             >;
 
             label = "arithmetic";
@@ -291,4 +291,3 @@
         };
     };
 };
-
