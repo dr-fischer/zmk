@@ -281,11 +281,11 @@
 
         arithmetic {
             bindings = <
-&kp ESC  &kp N1    &kp N2    &kp N3     &kp N4                &kp N5                                        &kp N6  &kp N7           &kp N8     &kp N9     &kp N0    &kp UP
-&trans   &kp DEL   &kp UP    &none      &kp LEFT_BRACE        &kp RIGHT_BRACE                               &none   &kp KP_MULTIPLY  &kp MINUS  &kp PLUS   &kp PIPE  &kp DOWN
-&trans   &kp LEFT  &kp DOWN  &kp RIGHT  &kp LEFT_BRACKET      &kp RIGHT_BRACKET                             &none   &kp KP_DIVIDE    &kp UNDER  &kp EQUAL  &none     &kp LEFT
-&trans   &none     &none     &none      &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS  &trans         &trans  &none   &kp BACKSLASH    &none      &kp DOT    &none     &kp RIGHT
-                   &trans    &trans     &trans                &trans                 &kp LS(RET)    &trans  &trans  &trans           &trans     &trans
+&kp ESC  &kp N1    &kp N2    &kp N3         &kp N4                &kp N5                                        &kp N6  &kp N7           &kp N8     &kp N9     &kp N0    &kp UP
+&trans   &kp DEL   &kp UP    &kp DEL        &kp LEFT_BRACE        &kp RIGHT_BRACE                               &none   &kp KP_MULTIPLY  &kp MINUS  &kp PLUS   &kp PIPE  &kp DOWN
+&trans   &kp LEFT  &kp DOWN  &kp RIGHT      &kp LEFT_BRACKET      &kp RIGHT_BRACKET                             &none   &kp KP_DIVIDE    &kp UNDER  &kp EQUAL  &none     &kp LEFT
+&trans   &none     &none     &kp LC(SLASH)  &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS  &trans         &trans  &none   &kp BACKSLASH    &none      &kp DOT    &none     &kp RIGHT
+                   &trans    &trans         &trans                &trans                 &kp LS(RET)    &trans  &trans  &trans           &trans     &trans
             >;
 
             label = "arithmetic";
@@ -293,4 +293,5 @@
         };
     };
 };
+
 
