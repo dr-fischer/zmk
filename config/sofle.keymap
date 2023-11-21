@@ -297,11 +297,11 @@
 
         emacs {
             bindings = <
-&kp LC(G)  &none   &trans       &trans  &trans         &trans                                  &trans               &trans               &trans               &trans               &trans  &trans
-&trans     &trans  &treemacs    &trans  &kp LA(KP_N7)  &trans                                  &kp LA(KP_NUMBER_7)  &kp LC(KP_N7)        &kp LC(KP_N8)        &kp LC(KP_NUMBER_9)  &trans  &trans
-&trans     &trans  &projectile  &trans  &kp LA(KP_N4)  &kp LEFT_PARENTHESIS                    &kp LA(KP_N4)        &kp LC(KP_NUMBER_4)  &kp LC(KP_NUMBER_5)  &kp LC(KP_N6)        &trans  &trans
-&trans     &trans  &trans       &trans  &trans         &trans                &trans    &trans  &kp LC(KP_N0)        &kp LC(KP_N1)        &kp LC(KP_N2)        &kp LC(KP_N3)        &trans  &trans
-                   &trans       &trans  &trans         &trans                &trans    &trans  &trans               &trans               &trans               &trans
+&kp LC(G)  &none          &trans       &trans  &trans         &trans                                  &trans               &trans               &trans               &trans               &trans  &trans
+&trans     &kp LC(EQUAL)  &treemacs    &trans  &kp LA(KP_N7)  &trans                                  &kp LA(KP_NUMBER_7)  &kp LC(KP_N7)        &kp LC(KP_N8)        &kp LC(KP_NUMBER_9)  &trans  &trans
+&trans     &trans         &projectile  &trans  &kp LA(KP_N4)  &kp LEFT_PARENTHESIS                    &kp LA(KP_N4)        &kp LC(KP_NUMBER_4)  &kp LC(KP_NUMBER_5)  &kp LC(KP_N6)        &trans  &trans
+&trans     &trans         &trans       &trans  &trans         &trans                &trans    &trans  &kp LC(KP_N0)        &kp LC(KP_N1)        &kp LC(KP_N2)        &kp LC(KP_N3)        &trans  &trans
+                          &trans       &trans  &trans         &trans                &trans    &trans  &trans               &trans               &trans               &trans
             >;
 
             label = "emacs";
@@ -321,5 +321,6 @@
         };
     };
 };
+
 
 
