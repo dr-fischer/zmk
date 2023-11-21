@@ -225,7 +225,7 @@
         projectile: projectile {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&kp LC(P) &kp W>;
+            bindings = <&kp LC(P) &kp P>;
             label = "PROJECTILE";
         };
     };
@@ -321,4 +321,5 @@
         };
     };
 };
+
 
