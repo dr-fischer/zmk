@@ -16,7 +16,7 @@
         };
 
         toalpha {
-            bindings = <&to 0>;
+            bindings = <&to 6>;
             key-positions = <54 55>;
             layers = <1 2 3 4>;
         };
