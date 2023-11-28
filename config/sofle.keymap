@@ -186,7 +186,7 @@
         delmodmorph: delmodmorph {
             compatible = "zmk,behavior-mod-morph";
             label = "DELMODMORPH";
-            bindings = <&kp D>, <&none>;
+            bindings = <&kp D>, <&kp DEL>;
 
             #binding-cells = <0>;
             mods = <(MOD_LCTL|MOD_RCTL)>;
