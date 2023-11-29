@@ -2,6 +2,7 @@
 #include <dt-bindings/zmk/bt.h>
 #include <dt-bindings/zmk/keys.h>
 #include <dt-bindings/zmk/outputs.h>
+#include <dt-bindings/zmk/rgb.h>
 
 / {
     combos {
@@ -182,22 +183,13 @@
             #binding-cells = <0>;
             bindings = <&kp CARET>, <&to 0>;
         };
-
-        delmodmorph: delmodmorph {
-            compatible = "zmk,behavior-mod-morph";
-            label = "DELMODMORPH";
-            bindings = <&kp D>, <&kp DEL>;
-
-            #binding-cells = <0>;
-            mods = <(MOD_LCTL|MOD_RCTL)>;
-        };
     };
 
     macros {
         texce: texce {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&kp BSLH &kp C &kp E &kp LEFT_BRACE &kp SPACE &kp SPACE &kp RBRC &kp LEFT &kp LEFT &kp LEFT>;
+            bindings = <&kp BSLH &kp C &kp E &kp LEFT_BRACE &kp SPACE &kp SPACE &kp RBRC &kp LEFT &kp LEFT>;
             label = "TEXCE";
         };
 
@@ -242,6 +234,20 @@
             bindings = <&kp COMMA &kp SPACE>;
             label = "COMMASPACE";
         };
+
+        texscinotation: texscinotation {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp DLLR &kp SPACE &kp SPACE &kp BSLH &kp T &kp I &kp M &kp E &kp S &kp SPACE &kp N1 &kp N0 &kp CARET &kp LEFT_BRACE &kp RBRC &kp DLLR &kp LEFT &kp LEFT>;
+            label = "TEXSCINOTATION";
+        };
+
+        texdegc: texdegc {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp DLLR &kp SPACE &kp SPACE &kp CARET &kp BSLH &kp C &kp I &kp R &kp C &kp SPACE &kp BSLH &kp T &kp E &kp X &kp T &kp LEFT_BRACE &kp LS(C) &kp RBRC &kp DLLR>;
+            label = "TEXDEGC";
+        };
     };
 
     keymap {
@@ -251,7 +257,7 @@
             bindings = <
 &kp ESC     &tphldkpkp F1 NUMBER_1  &tphldkpkp F2 NUMBER_2  &tphldkpkp F3 NUMBER_3  &tphldkpkp F4 NUMBER_4  &tphldkpkp F5 NUMBER_5                                            &tphldkpkp F6 NUMBER_6  &tphldkpkp F7 NUMBER_7  &tphldkpkp F8 NUMBER_8  &tphldkpkp F9 N9  &tphldkpkp F11 N0  &kp UP
 &kp TAB     &layertapdanceq         &kp W                   &molayerhold 4 E        &kp R                   &kp T                                                             &kp Y                   &kp U                   &kp I                   &kp O             &kp P              &kp DOWN
-&bkspc_del  &molayerhold 5 A        &kp S                   &delmodmorph            &kp F                   &kp G                                                             &kp H                   &kp J                   &kp K                   &molayerhold 3 L  &kp SEMI           &kp SQT
+&bkspc_del  &molayerhold 5 A        &kp S                   &tphldkpkp DEL D        &kp F                   &kp G                                                             &kp H                   &kp J                   &kp K                   &molayerhold 3 L  &kp SEMI           &kp SQT
 &cpslcktap  &kp Z                   &kp X                   &kp C                   &kp V                   &kp B                   &kp K_PLAY_PAUSE      &kp LG(W)           &kp N                   &kp M                   &kp COMMA               &kp DOT           &kp SLASH          &cpslcktap
                                     &kp LALT                &kp LCTRL               &kp LGUI                &molayerhold 1 SPACE    &molayerhold 2 RET    &molayerhold 2 RET  &kp SPACE               &kp LGUI                &kp RCTRL               &kp RALT
             >;
@@ -265,11 +271,11 @@
 
         NAV {
             bindings = <
-&bt BT_CLR  &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3          &bt BT_SEL 4                                       &kp PG_UP  &trans    &trans    &trans     &trans           &kp UP
-&trans      &none         &kp UP        &trans        &kp LEFT_BRACE        &kp RIGHT_BRACE                                    &kp HOME   &trans    &kp UP    &trans     &kp PRINTSCREEN  &kp DOWN
-&trans      &kp LEFT      &kp DOWN      &kp RIGHT     &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS                              &kp END    &kp LEFT  &kp DOWN  &kp RIGHT  &trans           &kp LEFT
-&trans      &trans        &trans        &trans        &kp LEFT_BRACKET      &kp RIGHT_BRACKET      &to 0     &trans            &kp PG_DN  &trans    &trans    &trans     &trans           &kp RIGHT
-                          &trans        &trans        &trans                &trans                 &trans    &layerUpBase 0 0  &trans     &trans    &trans    &trans
+&bt BT_CLR  &bt BT_SEL 0     &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3          &bt BT_SEL 4                                       &kp PG_UP  &trans    &trans    &trans     &trans           &kp UP
+&trans      &rgb_ug RGB_TOG  &kp UP        &trans        &kp LEFT_BRACE        &kp RIGHT_BRACE                                    &kp HOME   &trans    &kp UP    &trans     &kp PRINTSCREEN  &kp DOWN
+&trans      &kp LEFT         &kp DOWN      &kp RIGHT     &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS                              &kp END    &kp LEFT  &kp DOWN  &kp RIGHT  &trans           &kp LEFT
+&trans      &trans           &trans        &trans        &kp LEFT_BRACKET      &kp RIGHT_BRACKET      &to 0     &trans            &kp PG_DN  &trans    &trans    &trans     &trans           &kp RIGHT
+                             &trans        &trans        &trans                &trans                 &trans    &layerUpBase 0 0  &trans     &trans    &trans    &trans
             >;
 
             label = "NAV";
@@ -296,11 +302,11 @@
 
         latex {
             bindings = <
-&kp GRAVE  &kp N1      &kp N2     &kp N3      &kp N4                &kp N5                                   &kp N6     &kp N7        &kp N8     &kp N9   &kp N0  &trans
-&trans     &kp LS(LT)  &kp EQUAL  &kp LS(GT)  &kp LEFT_BRACE        &kp RIGHT_BRACE                          &kp MINUS  &texsubsuper  &kp I      &kp O    &kp P   &trans
-&trans     &kp A       &kp S      &none       &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS                    &kp H      &texce        &texfrac   &trans   &trans  &trans
-&trans     &trans      &kp X      &kp C       &kp LBKT              &kp RBKT               &trans    &trans  &kp N      &kp M         &kp COMMA  &kp DOT  &trans  &trans
-                       &trans     &trans      &trans                &trans                 &trans    &trans  &trans     &trans        &trans     &trans
+&kp GRAVE  &kp N1      &kp N2     &kp N3      &kp N4                &kp N5                                   &texsubsuper  &kp N7           &kp N8     &kp N9   &kp N0  &trans
+&trans     &kp LS(LT)  &kp EQUAL  &kp LS(GT)  &kp LEFT_BRACE        &kp RIGHT_BRACE                          &kp MINUS     &texdegc         &kp I      &kp O    &kp P   &trans
+&trans     &kp A       &kp S      &none       &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS                    &kp H         &texce           &texfrac   &trans   &trans  &trans
+&trans     &trans      &kp X      &kp C       &kp LBKT              &kp RBKT               &trans    &trans  &kp N         &texscinotation  &kp COMMA  &kp DOT  &trans  &trans
+                       &trans     &trans      &trans                &trans                 &trans    &trans  &trans        &trans           &trans     &trans
             >;
 
             label = "latex";
