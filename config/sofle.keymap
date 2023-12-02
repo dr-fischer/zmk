@@ -197,7 +197,7 @@
         texce: texce {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&kp BSLH &kp C &kp E &kp LEFT_BRACE &kp SPACE &kp SPACE &kp RBRC &kp LEFT &kp LEFT>;
+            bindings = <&kp BSLH &kp C &kp E &kp LEFT_BRACE &kp SPACE &kp SPACE &kp RBRC &kp LEFT &kp LEFT &caps_word>;
             label = "TEXCE";
         };
 
