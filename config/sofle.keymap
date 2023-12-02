@@ -93,7 +93,7 @@
             compatible = "zmk,behavior-tap-dance";
             label = "CPSLCKTAP";
             #binding-cells = <0>;
-            bindings = <&kp LEFT_SHIFT>, <&kp CAPSLOCK>;
+            bindings = <&kp LEFT_SHIFT>, <&caps_word>, <&kp CAPSLOCK>;
         };
 
         slayerhold: slayerhold {
