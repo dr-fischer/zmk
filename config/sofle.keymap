@@ -3,6 +3,10 @@
 #include <dt-bindings/zmk/keys.h>
 #include <dt-bindings/zmk/outputs.h>
 
+&caps_word {
+    continue-list = <UNDERSCORE BACKSPACE DELETE PLUS KP_PLUS CARET LEFT_BRACE RIGHT_BRACE LEFT_BRACKET RIGHT_BRACKET LESS_THAN GREATER_THAN EQUAL KP_EQUAL>;
+};
+
 / {
     combos {
         compatible = "zmk,combos";
@@ -252,6 +256,13 @@
             bindings = <&kp DLLR &kp SPACE &kp SPACE &kp CARET &kp BSLH &kp C &kp I &kp R &kp C &kp SPACE &kp BSLH &kp T &kp E &kp X &kp T &kp LEFT_BRACE &kp LS(C) &kp RBRC &kp DLLR>;
             label = "TEXDEGC";
         };
+
+        plutoplot: plutoplot {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&none &kp B &kp E &kp G &kp I &kp N &kp RET &kp SPACE &kp SPACE &kp SPACE &kp P &kp L &kp O &kp T &kp LPAR &kp X &kp COMMA &kp SPACE &kp Y &kp COMMA &kp SPACE &kp B &kp O &kp R &kp D &kp E &kp R &kp EQUAL &kp COLON &kp B &kp O &kp X &kp COMMA &kp SPACE &kp L &kp E &kp G &kp E &kp N &kp D &kp EQUAL &kp F &kp A &kp L &kp S &kp E &kp COMMA &kp SPACE &kp G &kp R &kp I &kp D &kp EQUAL &kp F &kp A &kp L &kp S &kp E &kp RPAR &kp RET &kp E &kp N &kp D>;
+            label = "PLUTOPLOT";
+        };
     };
 
     keymap {
@@ -261,7 +272,7 @@
             bindings = <
 &kp ESC     &tphldkpkp F1 NUMBER_1  &tphldkpkp F2 NUMBER_2  &tphldkpkp F3 NUMBER_3  &tphldkpkp F4 NUMBER_4  &tphldkpkp F5 NUMBER_5                                            &tphldkpkp F6 NUMBER_6  &tphldkpkp F7 NUMBER_7  &tphldkpkp F8 NUMBER_8  &tphldkpkp F9 N9  &tphldkpkp F11 N0  &kp UP
 &kp TAB     &layertapdanceq         &kp W                   &molayerhold 4 E        &kp R                   &kp T                                                             &kp Y                   &kp U                   &kp I                   &kp O             &kp P              &kp DOWN
-&bkspc_del  &molayerhold 5 A        &kp S                   &tphldkpkp DEL D        &kp F                   &kp G                                                             &kp H                   &kp J                   &kp K                   &molayerhold 3 L  &kp SEMI           &kp SQT
+&bkspc_del  &molayerhold 5 A        &kp S                   &tphldkpkp DEL D        &kp F                   &kp G                                                             &kp H                   &molayerhold 7 J        &kp K                   &molayerhold 3 L  &kp SEMI           &kp SQT
 &cpslcktap  &kp Z                   &kp X                   &kp C                   &kp V                   &kp B                   &kp K_PLAY_PAUSE      &kp LG(W)           &kp N                   &kp M                   &kp COMMA               &kp DOT           &kp SLASH          &cpslcktap
                                     &kp LALT                &kp LCTRL               &kp LGUI                &molayerhold 1 SPACE    &molayerhold 2 RET    &molayerhold 2 RET  &molayerhold 1 SPACE    &kp LGUI                &kp RCTRL               &kp RALT
             >;
@@ -351,6 +362,16 @@
 &out OUT_USB  &none         &none         &none         &none         &none                         &none  &none  &none  &none  &none  &none
 &sys_reset    &none         &none         &none         &none         &none         &none    &none  &none  &none  &none  &none  &none  &none
                             &none         &none         &none         &none         &none    &to 0  &none  &none  &none  &none
+            >;
+        };
+
+        julia {
+            bindings = <
+&trans  &trans  &trans  &trans  &trans  &trans                    &trans  &trans  &trans  &trans  &trans      &trans
+&trans  &trans  &trans  &trans  &trans  &trans                    &trans  &trans  &trans  &trans  &plutoplot  &trans
+&trans  &trans  &trans  &trans  &trans  &trans                    &trans  &trans  &trans  &trans  &trans      &trans
+&trans  &trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans  &trans      &trans
+                &trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans
             >;
         };
     };
