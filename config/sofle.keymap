@@ -263,6 +263,27 @@
             bindings = <&none &kp B &kp E &kp G &kp I &kp N &kp RET &kp SPACE &kp SPACE &kp SPACE &kp P &kp L &kp O &kp T &kp LPAR &kp X &kp COMMA &kp SPACE &kp Y &kp COMMA &kp SPACE &kp B &kp O &kp R &kp D &kp E &kp R &kp EQUAL &kp COLON &kp B &kp O &kp X &kp COMMA &kp SPACE &kp L &kp E &kp G &kp E &kp N &kp D &kp EQUAL &kp F &kp A &kp L &kp S &kp E &kp COMMA &kp SPACE &kp G &kp R &kp I &kp D &kp EQUAL &kp F &kp A &kp L &kp S &kp E &kp RPAR &kp RET &kp E &kp N &kp D>;
             label = "PLUTOPLOT";
         };
+
+        juliasnailline: juliasnailline {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp LC(C) &kp LC(L)>;
+            label = "JULIASNAILLINE";
+        };
+
+        juliasnailbuffer: juliasnailbuffer {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp LC(C) &kp LC(K)>;
+            label = "JULIASNAILBUFFER";
+        };
+
+        juliasnaildoc: juliasnaildoc {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp LC(C) &kp LC(D)>;
+            label = "JULIASNAILDOC";
+        };
     };
 
     keymap {
@@ -367,11 +388,11 @@
 
         julia {
             bindings = <
-&trans  &trans  &trans  &trans  &trans  &trans                    &trans  &trans  &trans  &trans  &trans      &trans
-&trans  &trans  &trans  &trans  &trans  &trans                    &trans  &trans  &trans  &trans  &plutoplot  &trans
-&trans  &trans  &trans  &trans  &trans  &trans                    &trans  &trans  &trans  &trans  &trans      &trans
-&trans  &trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans  &trans      &trans
-                &trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans          &trans  &trans                    &trans  &trans  &trans             &trans           &trans      &trans
+&trans  &trans  &trans  &trans          &trans  &trans                    &trans  &trans  &trans             &trans           &plutoplot  &trans
+&trans  &trans  &trans  &juliasnaildoc  &trans  &trans                    &trans  &trans  &juliasnailbuffer  &juliasnailline  &trans      &trans
+&trans  &trans  &trans  &trans          &trans  &trans  &trans    &trans  &trans  &trans  &trans             &trans           &trans      &trans
+                &trans  &trans          &trans  &trans  &trans    &trans  &trans  &trans  &trans             &trans
             >;
         };
     };
