@@ -322,11 +322,11 @@
 
         numsym {
             bindings = <
-&kp ESCAPE  &kp EXCLAMATION  &kp AT         &kp HASH       &kp LS(DOLLAR)        &kp PERCENT                                                  &kp TILDE    &none            &kp ASTERISK     &kp KP_DIVIDE    &kp EQUAL  &trans
-&trans      &backto1         &kp AMPERSAND  &kp PLUS       &kp LEFT_BRACE        &kp RIGHT_BRACE                                              &kp HOME     &kp KP_NUMBER_7  &kp KP_NUMBER_8  &kp KP_NUMBER_9  &kp PLUS   &trans
-&trans      &kp DEL          &kp MINUS      &kp BACKSLASH  &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS                                        &kp END      &kp KP_N4        &kp KP_NUMBER_5  &kp KP_NUMBER_6  &kp MINUS  &kp LEFT
-&trans      &kp PIPE         &kp UNDER      &kp GRAVE      &kp LBKT              &kp RBKT               &kp KP_NUMLOCK    &trans              &commaspace  &kp KP_NUMBER_1  &kp KP_NUMBER_2  &kp KP_N3        &kp RET    &tphldkpkp RIGHT_SHIFT RIGHT
-                             &trans         &trans         &trans                &kp SPACE              &to 0             &molayerhold 0 RET  &kp RET      &kp KP_N0        &kp KP_COMMA     &kp PERIOD
+&kp ESCAPE  &kp EXCLAMATION  &kp AT     &kp HASH       &kp LS(DOLLAR)        &kp PERCENT                                                  &kp TILDE    &kp AMPS         &kp ASTERISK     &kp KP_DIVIDE    &kp EQUAL  &trans
+&trans      &backto1         &kp EQUAL  &kp PLUS       &kp LEFT_BRACE        &kp RIGHT_BRACE                                              &kp HOME     &kp KP_NUMBER_7  &kp KP_NUMBER_8  &kp KP_NUMBER_9  &kp PLUS   &trans
+&trans      &kp DEL          &kp MINUS  &kp BACKSLASH  &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS                                        &kp END      &kp KP_N4        &kp KP_NUMBER_5  &kp KP_NUMBER_6  &kp MINUS  &kp LEFT
+&trans      &kp PIPE         &kp UNDER  &kp GRAVE      &kp LBKT              &kp RBKT               &kp KP_NUMLOCK    &trans              &commaspace  &kp KP_NUMBER_1  &kp KP_NUMBER_2  &kp KP_N3        &kp RET    &tphldkpkp RIGHT_SHIFT RIGHT
+                             &trans     &trans         &trans                &kp SPACE              &to 0             &molayerhold 0 RET  &kp RET      &kp KP_N0        &kp KP_COMMA     &kp PERIOD
             >;
 
             sensor-bindings =
