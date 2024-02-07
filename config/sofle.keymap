@@ -293,14 +293,14 @@
         emacsclosewindow: emacsclosewindow {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&kp LC(X) &kp LC(NUMBER_0)>;
+            bindings = <&kp LC(X) &kp NUMBER_0>;
             label = "EMACSCLOSEWINDOW";
         };
 
         emacskillbuffer: emacskillbuffer {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&kp LC(X) &kp LC(K)>;
+            bindings = <&kp LC(X) &kp K>;
             label = "EMACSKILLBUFFER";
         };
     };
