@@ -303,6 +303,13 @@
             bindings = <&kp LC(X) &kp K>;
             label = "EMACSKILLBUFFER";
         };
+
+        juliasnaildwim: juliasnaildwim {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp LC(C) &kp LC(E) &kp DOWN>;
+            label = "JULIASNAILDWIM";
+        };
     };
 
     keymap {
@@ -407,10 +414,10 @@
 
         julia {
             bindings = <
-&trans  &trans  &trans  &trans          &trans       &trans                    &trans  &trans  &trans             &trans           &trans      &trans
-&trans  &trans  &trans  &trans          &kp LS(RET)  &trans                    &trans  &trans  &trans             &trans           &plutoplot  &trans
-&trans  &trans  &trans  &juliasnaildoc  &trans       &trans                    &trans  &trans  &juliasnailbuffer  &juliasnailline  &trans      &trans
-&trans  &trans  &trans  &kp RC(SLASH)   &trans       &trans  &trans    &trans  &trans  &trans  &trans             &trans           &trans      &trans
+&trans  &trans  &trans  &trans          &trans       &trans                    &trans  &trans  &trans             &trans           &trans          &trans
+&trans  &trans  &trans  &trans          &kp LS(RET)  &trans                    &trans  &trans  &trans             &trans           &plutoplot      &trans
+&trans  &trans  &trans  &juliasnaildoc  &trans       &trans                    &trans  &trans  &juliasnailbuffer  &juliasnaildwim  &trans          &trans
+&trans  &trans  &trans  &kp RC(SLASH)   &trans       &trans  &trans    &trans  &trans  &trans  &trans             &juliasnailline  &juliasnaildoc  &trans
                 &trans  &trans          &trans       &trans  &trans    &trans  &trans  &trans  &trans             &trans
             >;
         };
