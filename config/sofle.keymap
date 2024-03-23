@@ -409,7 +409,7 @@
         julia {
             bindings = <
 &trans  &trans  &trans  &trans          &trans       &trans                         &trans  &trans  &trans             &trans           &trans          &trans
-&trans  &trans  &trans  &trans          &kp LS(RET)  &trans                         &trans  &trans  &trans             &trans           &plutoplot      &trans
+&trans  &trans  &trans  &none           &kp LS(RET)  &trans                         &trans  &trans  &trans             &trans           &plutoplot      &trans
 &trans  &trans  &trans  &juliasnaildoc  &trans       &trans                         &trans  &trans  &juliasnailbuffer  &juliasnaildwim  &trans          &trans
 &trans  &trans  &trans  &kp RC(SLASH)   &trans       &trans  &trans    &trans       &trans  &trans  &trans             &juliasnailline  &juliasnaildoc  &trans
                 &trans  &trans          &trans       &trans  &trans    &kp LC(RET)  &trans  &trans  &trans             &trans
