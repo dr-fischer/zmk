@@ -1,18 +1,10 @@
 manifest:
   remotes:
     - name: zmkfirmware
-      url-base: https://github.com/zmkfirmware
-    - name: petejohanson
       url-base: https://github.com/petejohanson
-    - name: krikun98
-      url-base: https://github.com/krikun98
-    - name: ftc
-      url-base: https://github.com/ftc
-    - name: urob
-      url-base: https://github.com/urob
   projects:
     - name: zmk
-      remote: petejohanson
+      remote: zmkfirmware
       revision: feat/pointers-move-scroll
       import: app/west.yml
   self:
