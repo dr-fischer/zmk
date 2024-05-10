@@ -4,8 +4,6 @@ emanifest:
       url-base: https://github.com/zmkfirmware
     - name: petejohanson
       url-base: https://github.com/petejohanson
-    - name: zmkfirmware
-      url-base: https://github.com/zmkfirmware
     - name: krikun98
       url-base: https://github.com/krikun98
     - name: ftc
