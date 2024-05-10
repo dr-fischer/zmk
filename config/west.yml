@@ -1,9 +1,7 @@
-emanifest:
+manifest:
   remotes:
     - name: zmkfirmware
       url-base: https://github.com/zmkfirmware
-    - name: petejohanson
-      url-base: https://github.com/petejohanson
     - name: krikun98
       url-base: https://github.com/krikun98
     - name: ftc
@@ -12,7 +10,7 @@ emanifest:
       url-base: https://github.com/urob
   projects:
     - name: zmk
-      remote: ftc
+      remote: urob
       revision: main
       import: app/west.yml
   self:
