@@ -1,8 +1,8 @@
-manifest:
+emanifest:
   remotes:
     - name: zmkfirmware
       url-base: https://github.com/zmkfirmware
-    - name: zmk
+    - name: petejohanson
       url-base: https://github.com/petejohanson
   projects:
     - name: zmk
