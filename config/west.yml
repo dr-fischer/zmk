@@ -13,7 +13,7 @@ emanifest:
   projects:
     - name: zmk
       remote: ftc
-      revision: feat/pointers-move-scroll
+      revision: main
       import: app/west.yml
   self:
     path: config
